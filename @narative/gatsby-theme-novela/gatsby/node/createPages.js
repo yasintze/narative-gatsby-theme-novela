@@ -13,6 +13,7 @@ const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
+  category: path.resolve(templatesDirectory, 'category.template.tsx'),
 };
 
 const query = require('../data/data.query');
@@ -134,6 +135,19 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   `);
   }
 
+  categories = articles.reduce((acc, article) => {
+    acc = acc.concat(article.categories);
+    return acc;
+  }, []);
+
+  const uniqueCategories = [...new Set(categories)];
+
+  if (uniqueCategories.length === 0 || uniqueCategories.length === 0) {
+    throw new Error(`
+    You must have at least one Category to create category page.
+  `);
+  }
+
   /**
    * Once we've queried all our data sources and normalized them to the same structure
    * we can begin creating our pages. First, we'll want to create all main articles pages
@@ -242,4 +256,33 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       });
     });
   }
+  /**
+   * Creating individual category pages
+   */
+  log('Creating', 'category pages');
+  uniqueCategories.forEach(category => {
+    let allArticlesOfThatCategory;
+    try {
+      allArticlesOfThatCategory = articles.filter(article =>
+        article.categories.includes(category),
+      );
+      console.log(allArticlesOfThatCategory);
+    } catch (error) {
+      throw new Error(`
+        We could not find the Articles for: "${category}".
+        Double check the categories field is specified in your post and the name
+        matches a specified category.
+        Category name: ${category}
+        ${error}
+      `);
+    }
+    createPage({
+      path: `/category/${category}`,
+      component: templates.category,
+      context: {
+        articles: allArticlesOfThatCategory,
+        category,
+      },
+    });
+  });
 };
