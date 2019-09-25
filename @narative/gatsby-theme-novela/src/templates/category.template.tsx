@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Section from '@components/Section';
+import Headings from '@components/Headings';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Paginator from '@components/Navigation/Navigation.Paginator';
@@ -11,13 +12,12 @@ import AuthorArticles from '../sections/author/Author.Articles';
 
 function CategoryPage({ location, pageContext }) {
   const { articles, category } = pageContext;
-  // const articles = pageContext.group;
 
   return (
     <Layout>
       <SEO pathname={location.pathname} title={category} />
       <Section narrow>
-        {/* <AuthorHero author={author} /> */}
+        <Headings.h2>{category}</Headings.h2>
         <AuthorArticles articles={articles} />
         <AuthorPaginator>
           <Paginator {...pageContext} />

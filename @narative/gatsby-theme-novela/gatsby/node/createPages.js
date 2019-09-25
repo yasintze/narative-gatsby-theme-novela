@@ -135,8 +135,8 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   `);
   }
 
-  categories = articles.reduce((acc, article) => {
-    acc = acc.concat(article.categories);
+  const categories = articles.reduce((acc, article) => {
+    acc.push(article.categories);
     return acc;
   }, []);
 
