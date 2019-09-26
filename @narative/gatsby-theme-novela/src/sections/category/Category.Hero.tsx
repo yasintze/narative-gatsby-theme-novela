@@ -7,7 +7,6 @@ const CategoryHero = ({ category }) => {
   return (
     <Hero>
       <Heading>{category}</Heading>
-      {/* <Subheading>{author.bio}</Subheading> */}
     </Hero>
   );
 };
@@ -30,6 +29,7 @@ const Heading = styled.h1`
   color: ${p => p.theme.colors.primary};
   margin-bottom: 15px;
   font-weight: 600;
+  text-transform: capitalize;
 
   ${mediaqueries.tablet`
   `}

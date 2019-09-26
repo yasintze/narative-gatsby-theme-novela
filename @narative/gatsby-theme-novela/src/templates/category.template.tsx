@@ -7,8 +7,8 @@ import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Paginator from '@components/Navigation/Navigation.Paginator';
 
-import AuthorHero from '../sections/author/Author.Hero';
 import AuthorArticles from '../sections/author/Author.Articles';
+import CategoryHero from '../sections/category/Category.Hero';
 
 function CategoryPage({ location, pageContext }) {
   const { articles, category } = pageContext;
@@ -17,7 +17,7 @@ function CategoryPage({ location, pageContext }) {
     <Layout>
       <SEO pathname={location.pathname} title={category} />
       <Section narrow>
-        <Headings.h2>{category}</Headings.h2>
+        <CategoryHero category={category} />
         <AuthorArticles articles={articles} />
         <AuthorPaginator>
           <Paginator {...pageContext} />

@@ -51,6 +51,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   const {
     basePath = '/',
     authorsPath = '/authors',
+    categoryPath = '/category',
     authorsPage = true,
     pageLength = 6,
     sources = {},
@@ -136,8 +137,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   }
 
   const categories = articles.reduce((acc, article) => {
-    acc.push(article.categories);
-    return acc;
+    return [...acc, ...article.categories];
   }, []);
 
   const uniqueCategories = [...new Set(categories)];
@@ -266,7 +266,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       allArticlesOfThatCategory = articles.filter(article =>
         article.categories.includes(category),
       );
-      console.log(allArticlesOfThatCategory);
     } catch (error) {
       throw new Error(`
         We could not find the Articles for: "${category}".
@@ -276,12 +275,21 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         ${error}
       `);
     }
-    createPage({
-      path: `/category/${category}`,
-      component: templates.category,
+    const path = slugify(category, categoryPath);
+
+    createPaginatedPages({
+      edges: allArticlesOfThatCategory,
+      pathPrefix: path,
+      createPage,
+      pageLength,
+      pageTemplate: templates.category,
+      buildPath: buildPaginatedPath,
       context: {
         articles: allArticlesOfThatCategory,
         category,
+        originalPath: path,
+        skip: pageLength,
+        limit: pageLength,
       },
     });
   });
