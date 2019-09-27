@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "build": "yarn workspace www build",
+    "clean": "yarn workspace www clean",
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "yarn workspace www develop",
