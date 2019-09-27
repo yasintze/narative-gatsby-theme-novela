@@ -263,9 +263,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
    */
   log('Creating', 'category pages');
   uniqueCategories.forEach(category => {
-    let allArticlesOfThatCategory;
+    let allArticlesOfTheCategory;
     try {
-      allArticlesOfThatCategory = articles.filter(article =>
+      allArticlesOfTheCategory = articles.filter(article =>
         article.categories.includes(category),
       );
     } catch (error) {
@@ -280,7 +280,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     const path = slugify(category, categoryPath);
 
     createPaginatedPages({
-      edges: allArticlesOfThatCategory,
+      edges: allArticlesOfTheCategory,
       pathPrefix: path,
       createPage,
       pageLength,
