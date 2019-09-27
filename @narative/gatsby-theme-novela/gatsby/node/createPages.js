@@ -257,7 +257,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     });
   }
   /**
-   * Creating individual category pages
+   * Creating main category pages example
+   *  /category/gatsby
+   * /category/gatsby/2
    */
   log('Creating', 'category pages');
   uniqueCategories.forEach(category => {
@@ -285,7 +287,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       pageTemplate: templates.category,
       buildPath: buildPaginatedPath,
       context: {
-        articles: allArticlesOfThatCategory,
         category,
         originalPath: path,
         skip: pageLength,

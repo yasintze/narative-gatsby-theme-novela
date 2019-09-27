@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import Section from '@components/Section';
-import Headings from '@components/Headings';
 import SEO from '@components/SEO';
 import Layout from '@components/Layout';
 import Paginator from '@components/Navigation/Navigation.Paginator';
@@ -11,7 +10,7 @@ import AuthorArticles from '../sections/author/Author.Articles';
 import CategoryHero from '../sections/category/Category.Hero';
 
 function CategoryPage({ location, pageContext }) {
-  const { articles, category } = pageContext;
+  const { group: articles, category } = pageContext;
 
   return (
     <Layout>
