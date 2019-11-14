@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace www build",
+    "build": "CHOKIDAR_USEPOLLING=1 yarn workspace www build",
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "CHOKIDAR_USEPOLLING=1 yarn workspace www develop",
