@@ -78,3 +78,6 @@ yarn-error.log
 
 # NPM lock files
 package-lock.json
+
+# envdoc config
+.env.development

@@ -1,26 +1,33 @@
-<a href="https://www.narative.co/labs/novela/" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-hero.jpg" alt="gatsby-novela-theme hero image" />
-</a>
+![screenshot](www/static/novela-wa.png)
 
-<br/>
-
-# Novela — A Gatsby theme by Narative
-
-With minimal styling and maximum features — including multiple homepage layouts, built-in social sharing and dark mode — Novela makes it easy to start publishing beautiful articles and stories with Gatsby.
+# Novela-WA — A Gatsby theme based on Narative
 
 Novela is built by the team at [Narative](https://www.narative.co), and built for everyone that loves the web.
 
-<div>
-<a href="https://www.narative.co/labs/novela/" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-demo.jpg" alt="gatsby-novela-theme live demo" width="295px" />
-</a>
-</div>
+Novela-WA enhanced the theme by add auth0 integration for secret pages access, enable VideioPlayer component in .mdx file, also fixed the `source and transform nodes` problem in local MacOS development.
 
-<div>
-<a href="https://www.narative.co/design/open/novela" target="_blank">
-<img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-cta-figma.jpg" alt="gatsby-novela-theme figma link" width="295px" />
-</a>
-</div>
+### Features
+
+- add secret page list by: http://localhost:8000/secret  - @2019/11/08
+- add VideoPlayer component in www/src/components - @2019/11/08
+- add auth0 integration  - @2019/11/13
+- add wrapRootElement in www/gatsby-browser.js to check session - @2019/11/13
+- fix `source and transform nodes` stuck problem by prefix `CHOKIDAR_USEPOLLING=1` on start command - @2019/11/13
+
+### Auth0 configuration
+
+- create a single page web application in auth0 dashboard
+- cp www/.env.example to www/.env.development and fill the 3 values with your auth0 app settings
+
+for example:
+
+```
+AUTH0_DOMAIN=yourusername.auth0.com
+AUTH0_CLIENTID=UHgrD3P2nPnmq1Gjj6yU9gxxxxxxxxxx
+AUTH0_CALLBACK=http://localhost:8000/callback
+```
+
+for detailed explanation about auth0 configuration, please reference [this](https://auth0.com/blog/securing-gatsby-with-auth0/).
 
 ### Table of Contents
 
@@ -213,7 +220,7 @@ excerpt: This is a love story about Narative and Gatsby
 
 ### Step 6: Configuring siteMetadata
 
-In order to configure the theme to properly generate the pages and meta tags you must add specific data to `siteMetadata`.
+In order to configure the theme to properly genreate the pages and meta tags you must add specific data to `siteMetadata`.
 
 The fields that are unique to Novela are `hero.heading`, `hero.maxWidth`, and `social`.
 
@@ -261,13 +268,13 @@ If you ran into problems you can reference the [example repository](https://gith
 
 # Data Sources
 
-With the flexibility of Gatsby, Novela is able to pull different data sources to build your website. Right now we support Contentful and your local file system. All data sources can be combined together or used separately.
+With the flexibility of Gatsby, Novela is able to pull different data sources to build your website. Right now we support Contentful and your local file system. All data sources can be combined together or used seperately.
 
 ### Local
 
-Local is the default data source for Novela. Write MDX and YAML in order to generate posts and authors. This is the fastest and simplest way to get started.
+Local is the default data source for Novela. Write MDX and YAML in order to generate posts and authors. This is the fastest and simplist way to get started.
 
-To learn how to use the local file system, read the [Installation](#installation) steps.
+To learn how to use the local file system the [Installation](#installation) steps.
 
 ### Contentful
 
@@ -607,7 +614,7 @@ excerpt: This is a love story about Narative and Gatsby
 | title         | required |   String   |                                                            Used for the <title></title>                                                             |
 | name          | required | String Ref |                                           Used in multiple locations including meta tags and site footer                                            |
 | siteUrl       | required |    Date    |                                                                  Used in meta tags                                                                  |
-| description   | required |   String   |                                                                  Used in meta tags                                                                  |
+| description   | required |   Image    |                                                                  Used in meta tags                                                                  |
 | hero.heading  | required |   String   |                                                                  Used in the Hero                                                                   |
 | hero.maxWidth | optional |   number   |                                                          Used in the Hero. Defaults to 652                                                          |
 | social        | required |   Array    | [View supported icon/name combinations](https://github.com/narative/gatsby-theme-novela/blob/master/%40narative/gatsby-theme-novela/src/components/SocialLinks/SocialLinks.tsx#L15). `url` is required and the icon is chosen based on the url. If you also provide `name`, then the icon will be the same as the name you provided as long as the name equals one of the supported icons (See example bellow). Used in site footer and meta tags |
@@ -649,7 +656,7 @@ module.exports = {
         url: `https://dribbble.com/narativestudio`,
       },
       {
-        name: 'stackoverflow',
+        name: 'stackoverflow'
         url: `https://bit.ly/1x0885j`,
       },
     ],
@@ -667,7 +674,7 @@ Choose between a variable width grid or a simpler list style to display each sto
 
 ### Mailchimp integration
 
-Start building an audience and grow your blog subscribers with Mailchimp.
+Start building an audiene and grow your blog with Mailchimp audiences.
 
 ### Toggleable Light and Dark Mode
 
@@ -677,7 +684,7 @@ Out of the box, Novela includes both light and dark designs that can be toggled 
 
 ### Simple Customization with [Theme UI](https://theme-ui.com/)
 
-Consistent, easy-to-read code lets you quickly customize every color and setting.
+Consistent, easy-to-read code let you quickly customize every color and setting.
 
 ### Show code effortlessly
 

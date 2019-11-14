@@ -8,7 +8,7 @@
     "build": "yarn workspace www build",
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
-    "start": "yarn workspace www develop",
+    "start": "CHOKIDAR_USEPOLLING=1 yarn workspace www develop",
     "bootstrap": "yarn lerna bootstrap",
     "publish": "yarn lerna version && yarn lerna publish"
   },
@@ -25,6 +25,7 @@
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-unicorn": "^10.0.0",
     "husky": "^3.0.4",
     "lerna": "^3.16.4",
@@ -34,7 +35,9 @@
     "extends": [
       "airbnb-base",
       "plugin:prettier/recommended",
-      "plugin:unicorn/recommended"
+      "plugin:unicorn/recommended",
+      "eslint:recommended",
+      "plugin:react/recommended"
     ],
     "env": {
       "browser": false
@@ -42,6 +45,8 @@
     "overrides": [],
     "plugins": [],
     "rules": {
+      "import/prefer-default-export": "off",
+      "react/prop-types": "off",
       "unicorn/no-abusive-eslint-disable": 0,
       "unicorn/filename-case": [
         "error",
@@ -52,6 +57,25 @@
           }
         }
       ]
+    },
+    "settings": {
+      "react": { "version": "latest" },
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ]
+        }
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true,
+        "modules": true
+      }
     }
   },
   "husky": {
@@ -63,5 +87,9 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "all"
+  },
+  "dependencies": {
+    "@types/auth0-js": "^9.10.6",
+    "@types/theme-ui": "^0.2.4"
   }
 }

@@ -87,13 +87,14 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
   }
 
   if (node.internal.type === `Mdx` && source === contentPath) {
+    const mdxPath = node.frontmatter.secret ? `${basePath}/secret` : basePath;
     const fieldData = {
       author: node.frontmatter.author,
       date: node.frontmatter.date,
       hero: node.frontmatter.hero,
       secret: node.frontmatter.secret || false,
       slug: generateSlug(
-        basePath,
+        mdxPath, // @2019/11/12
         generateArticlePermalink(
           slugify(node.frontmatter.slug || node.frontmatter.title),
           node.frontmatter.date,
