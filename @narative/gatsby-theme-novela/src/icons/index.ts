@@ -24,6 +24,8 @@ import ToggleOpen from './ui/ToggleOpen.Icon';
 import ToggleClose from './ui/ToggleClose.Icon';
 import Rows from './ui/Rows.Icon';
 import Tiles from './ui/Tiles.Icon';
+import User from './ui/User.Icon'; // @2019/11/09
+import Condom from './ui/Condom.Icon'; // @2019/11/09
 
 export default {
   Behance,
@@ -50,4 +52,6 @@ export default {
   ToggleOpen,
   Rows,
   Tiles,
+  User,
+  Condom,
 };

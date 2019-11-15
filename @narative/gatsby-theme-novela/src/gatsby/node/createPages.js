@@ -11,7 +11,9 @@ const createPaginatedPages = require('gatsby-paginate');
 const templatesDirectory = path.resolve(__dirname, '../../templates');
 const templates = {
   articles: path.resolve(templatesDirectory, 'articles.template.tsx'),
+  articlesAuth: path.resolve(templatesDirectory, 'articles.auth.tsx'),
   article: path.resolve(templatesDirectory, 'article.template.tsx'),
+  articleAuth: path.resolve(templatesDirectory, 'article.auth.tsx'),
   author: path.resolve(templatesDirectory, 'author.template.tsx'),
 };
 
@@ -25,6 +27,13 @@ function buildPaginatedPath(index, basePath) {
     return index > 1 ? `${basePath}page/${index}` : basePath;
   }
   return index > 1 ? `${basePath}/page/${index}` : basePath;
+}
+
+function buildPaginatedSecret(index, basePath) {
+  if (basePath === '/') {
+    return index > 1 ? `${basePath}secret/${index}` : `${basePath}secret`;
+  }
+  return index > 1 ? `${basePath}/secret/${index}` : `${basePath}/secret`;
 }
 
 function slugify(string, base) {
@@ -165,6 +174,23 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     },
   });
 
+  log('*Creating*', '-- SECRET articles page');
+  createPaginatedPages({
+    edges: articles.filter(article => article.secret),
+    pathPrefix: basePath,
+    createPage,
+    pageLength,
+    pageTemplate: templates.articlesAuth,
+    buildPath: buildPaginatedSecret,
+    context: {
+      authors,
+      basePath,
+      skip: pageLength,
+      limit: pageLength,
+      secret: true, // @2019/11/12
+    },
+  });
+
   /**
    * Once the list of articles have bene created, we need to make individual article posts.
    * To do this, we need to find the corresponding authors since we allow for co-authors.
@@ -203,9 +229,12 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       next = [...next, articlesThatArentSecret[0]];
     if (articlesThatArentSecret.length === 1) next = [];
 
+    const articleTplt = article.secret
+      ? templates.articleAuth
+      : templates.article;
     createPage({
       path: article.slug,
-      component: templates.article,
+      component: articleTplt,
       context: {
         article,
         authors: authorsThatWroteTheArticle,

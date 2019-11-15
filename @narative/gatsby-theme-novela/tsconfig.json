@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "declaration": false,
+    "importHelpers": true,
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2017"],
+    "module": "commonjs",
+    "noEmitHelpers": false,
+    "noImplicitAny": true,
+    "noResolve": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "strictNullChecks": true,
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@components/*":["src/components/*"],
+      "@styles/*": ["src/styles/*"],
+      "@icons": ["src/icons"],
+      "@types": ["src/types"],
+      "@utils": ["src/utils"],
+    }
+  },
+  "include": ["./src/**/*"],
+}

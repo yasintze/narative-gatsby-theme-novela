@@ -53,6 +53,11 @@ export interface IArticle {
   date: string;
 }
 
+interface IArticleHero {
+  authors: IAuthor[];
+  secret : boolean;
+}
+
 interface IArticleQuery {
   edges: {
     node: IArticle;
