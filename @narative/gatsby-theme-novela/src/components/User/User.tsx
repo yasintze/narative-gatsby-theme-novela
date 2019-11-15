@@ -15,7 +15,7 @@ const User: React.FC<{}> = () => {
   const isDark = colorMode === `dark`;
   const fill = isDark ? "#fff" : "#000";
   const isBrowser = typeof window !== "undefined"
-  let isSecret = isBrowser?location.pathname.includes("/secret"):false
+  const isSecret = isBrowser?location.pathname.includes("/secret"):false
 
   function userHandler(){
     if(isSecret){

@@ -6,6 +6,25 @@ Novela is built by the team at [Narative](https://www.narative.co), and built fo
 
 Novela-WA enhanced the theme by add auth0 integration for secret pages access, enable VideioPlayer component in .mdx file, also fixed the `source and transform nodes` problem in local MacOS development.
 
+### Demo
+
+is [HERE](https://novela-auth0-demo.netlify.com/)
+
+to deply this site to netlify:
+
+```
+$ netlify deploy --dir www/public
+```
+
+if you deleted the site in netlify and redeploy the local project:
+
+```
+$ netlify unlink
+$ netlify deploy --dir www/public
+```
+
+otherwise, the console always said: `›   Error: Not Found`
+
 ### Features
 
 - add secret page list by: http://localhost:8000/secret  - @2019/11/08
@@ -13,11 +32,13 @@ Novela-WA enhanced the theme by add auth0 integration for secret pages access, e
 - add auth0 integration  - @2019/11/13
 - add wrapRootElement in www/gatsby-browser.js to check session - @2019/11/13
 - fix `source and transform nodes` stuck problem by prefix `CHOKIDAR_USEPOLLING=1` on start command - @2019/11/13
+- `CHOKIDAR_USEPOLLING=1` solution sometimes doesnt work, then when stuck, **RESIZE** your console window, it would continue buildding...so weird! - @2019/11/14
 
 ### Auth0 configuration
 
-- create a single page web application in auth0 dashboard
+- create a Single Page Web Application in auth0 dashboard
 - cp www/.env.example to www/.env.development and fill the 3 values with your auth0 app settings
+- for production deployment create www/.env.production and use real domain name in auth0 SPWA `Settings/Allowed Callback URLs` and `Allowed Web Origins`, also change value of AUTH0_CALLBACK in .env.production file
 
 for example:
 

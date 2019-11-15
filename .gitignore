@@ -81,3 +81,6 @@ package-lock.json
 
 # envdoc config
 .env.development
+.env.production
+# Local Netlify folder
+.netlify
