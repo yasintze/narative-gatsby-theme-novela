@@ -1,6 +1,6 @@
 # Novela is archived
 
-### Our team is focused on building **[Fey](https://www.feyapp.com)**, a tool for strategic, focused trading for self-directed investors.
+### We are building **[Fey](https://www.feyapp.com)**, a tool for strategic, focused trading for self-directed investors.
 
 <br />
 
