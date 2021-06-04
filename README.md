@@ -1,8 +1,17 @@
-# This project will be removed on June 1st
+# Novela is archived
+
+### Our team is focused on building **[Fey](https://www.feyapp.com)**, a tool for strategic, focused trading for self-directed investors.
+
+<br />
+
+--- 
+
+<br />
 
 <a href="https://www.narative.co/labs/novela/" target="_blank">
 <img src="https://raw.githubusercontent.com/narative/gatsby-theme-novela-example/master/assets/gatsby-theme-novela-hero.jpg" alt="gatsby-novela-theme hero image" />
 </a>
+
 
 <br/>
 
