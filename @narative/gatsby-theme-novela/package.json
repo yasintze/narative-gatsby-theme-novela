@@ -30,10 +30,10 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
-    "@types/react-helmet": "^5.0.15",
-    "gatsby": "^2.15.7",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "@types/react-helmet": "5.0.15",
+    "gatsby": "2.18.17",
+    "react": "16.12.0",
+    "react-dom": "16.12.0"
   },
   "dependencies": {
     "@blocks/kit": "^0.0.28",
