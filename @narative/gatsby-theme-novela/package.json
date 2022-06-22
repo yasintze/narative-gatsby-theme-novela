@@ -32,8 +32,8 @@
   "devDependencies": {
     "@types/react-helmet": "5.0.20",
     "gatsby": "2.18.17",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "react": "16.14.0",
+    "react-dom": "16.14.0"
   },
   "dependencies": {
     "@blocks/kit": "^0.0.28",
