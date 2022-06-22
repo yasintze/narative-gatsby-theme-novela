@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
       with:
         # pulls all commits (needed for lerna / semantic release to correctly version) — see https://github.com/lerna/lerna/issues/2542
         fetch-depth: "0"
