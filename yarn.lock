@@ -8282,10 +8282,10 @@ gatsby-remark-smartypants@^2.1.2:
     retext-smartypants "^3.0.3"
     unist-util-visit "^1.4.1"
 
-gatsby-remark-typescript@^0.0.12:
-  version "0.0.12"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-typescript/-/gatsby-remark-typescript-0.0.12.tgz#ee4e80708314a2eaa00d49476384813b86f8b91b"
-  integrity sha512-RrxEdTH4qfOmLrvwWkrQ/L/s95/JLqEuVZXc4O4Xs5xFZt+JAXRYYx089OkUSSYlynHHu3WSWVysUyFkhBwR8Q==
+gatsby-remark-typescript@^0.2.0:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-typescript/-/gatsby-remark-typescript-0.2.2.tgz#d4d61fcc5fe0e5013bf9353c294c7997045ffc01"
+  integrity sha512-Rz7eNWPXGvreTyn8TM6jEYBVhEycl0pGBMyrtUvuTbwVzFdQDvlz5kyU20PuspBt8xAGcbl8rIUNiFwjmYp+RA==
   dependencies:
     "@babel/core" "^7.5.5"
     "@babel/preset-typescript" "^7.3.3"
