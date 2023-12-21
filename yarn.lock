@@ -2525,10 +2525,10 @@
     "@types/history" "*"
     "@types/react" "*"
 
-"@types/react-helmet@5.0.20":
-  version "5.0.20"
-  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.20.tgz#8d27d8a38bca710055eb021db5a65af07829752b"
-  integrity sha512-0gv4NbI5dqBR9l5iMAfDo0udcPfjvv0H8V3tCL1JxCYvXfqYixzsEPVuOIrLCwezELie90S3r+gQuHpEy7SHvg==
+"@types/react-helmet@5.0.27":
+  version "5.0.27"
+  resolved "https://registry.yarnpkg.com/@types/react-helmet/-/react-helmet-5.0.27.tgz#3a8ef023c631b96eca998bbabd1a9cb681412aef"
+  integrity sha512-vfgoTajBzXobvVr++AeEM/nmTflaQokL0TX8XL74Yj4xsonT0s6FND56NSSyY+RL/f54Xc19N6Wnitfe+T1Efg==
   dependencies:
     "@types/react" "*"
 
