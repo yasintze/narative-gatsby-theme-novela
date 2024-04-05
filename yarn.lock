@@ -2344,9 +2344,9 @@
     strip-ansi "^3"
 
 "@raae/gatsby-remark-oembed@^0.3.0":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@raae/gatsby-remark-oembed/-/gatsby-remark-oembed-0.3.1.tgz#aa36de06d5e97b13422ad9604cff5376febb2699"
-  integrity sha512-vB46/9sCt6dKg9WFR8ia/sjL8jnz9VeS00PRveaMk/+pWsSVeNiAHAL+Myals8DRxw4qlxYzGcmH0gYkomZOMA==
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/@raae/gatsby-remark-oembed/-/gatsby-remark-oembed-0.3.3.tgz#7bef853aa2d03c10cbf122eb2119caa66d2db4d1"
+  integrity sha512-7x7I0lqwEkqYVMeyc1bTV4Zn4CBNs5vCkJMvF+lHR/iUTs2lTFZfRuQjOxTU/pvLlNUecJkYNiTnU2KMR632ZQ==
   dependencies:
     axios "0.27.2"
     lodash "4.17.21"
