@@ -11,12 +11,12 @@
   "dependencies": {
     "@narative/gatsby-theme-novela": "^0.18.7",
     "dotenv": "8.2.0",
-    "gatsby": "2.18.17",
-    "gatsby-plugin-google-analytics": "2.1.31",
+    "gatsby": "2.32.13",
+    "gatsby-plugin-google-analytics": "2.11.0",
     "gatsby-plugin-mailchimp": "5.1.2",
-    "gatsby-plugin-manifest": "2.2.34",
-    "gatsby-source-contentful": "2.1.73",
-    "gatsby-source-filesystem": "2.1.43",
+    "gatsby-plugin-manifest": "2.12.1",
+    "gatsby-source-contentful": "2.3.56",
+    "gatsby-source-filesystem": "2.11.1",
     "react": "16.14.0",
     "react-dom": "16.14.0"
   }

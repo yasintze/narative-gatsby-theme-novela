@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/react-helmet": "5.0.20",
-    "gatsby": "2.18.17",
+    "gatsby": "2.32.13",
     "react": "16.14.0",
     "react-dom": "16.14.0"
   },
@@ -49,7 +49,7 @@
     "gatsby-image": "^2.2.7",
     "gatsby-paginate": "^1.1.0",
     "gatsby-plugin-emotion": "^4.1.2",
-    "gatsby-plugin-feed": "2.3.7",
+    "gatsby-plugin-feed": "2.13.1",
     "gatsby-plugin-mailchimp": "^5.1.2",
     "gatsby-plugin-mdx": "^1.0.32",
     "gatsby-plugin-react-helmet": "^3.1.2",
