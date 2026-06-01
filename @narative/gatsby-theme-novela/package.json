@@ -26,14 +26,14 @@
   },
   "peerDependencies": {
     "gatsby": "^2.15.7",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react": "^16.8.6 || ^19.0.0",
+    "react-dom": "^16.8.6 || ^19.0.0"
   },
   "devDependencies": {
     "@types/react-helmet": "5.0.20",
     "gatsby": "2.18.17",
-    "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
   },
   "dependencies": {
     "@blocks/kit": "^0.0.28",
